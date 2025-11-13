@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">MyBrand</div>
+
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="main-nav" id="primary-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Craft modern, responsive websites</h1>
+          <p>Advanced layout using CSS Grid &amp; Flexbox — accessible, fast, and production-ready.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#">Get Started</a>
+            <a class="btn ghost" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="mock-phone">
+            <div class="screen">Preview</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <article class="feature">
+        <h3>Performant</h3>
+        <p>Optimized CSS and semantic markup.</p>
+      </article>
+      <article class="feature">
+        <h3>Responsive</h3>
+        <p>Fluid typography, breakpoints and a mobile-first approach.</p>
+      </article>
+      <article class="feature">
+        <h3>Accessible</h3>
+        <p>Keyboard-friendly navigation and ARIA where needed.</p>
+      </article>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Ready to ship your next project?</h2>
+        <a class="btn primary" href="#">Start Free Trial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year2"></span> MyBrand — Built with care.</p>
+      <nav class="social">
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+<script>
+/* Small JS for hamburger toggle and accessible nav */
+const nav = document.getElementById('primary-nav');
+const btn = document.querySelector('.nav-toggle');
+btn.addEventListener('click', () => {
+  const open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!open));
+  nav.classList.toggle('open');
+});
+document.getElementById('year2').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
