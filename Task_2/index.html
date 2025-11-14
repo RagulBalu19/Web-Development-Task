@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOdo List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" role="application" aria-labelledby="appTitle">
+        <h2 id="appTitle">My To-Do List</h2>
+
+        <div class="input-row">
+            <label for="taskinput" class="visually-hidden">New task</label>
+            <input type="text" id="taskinput" placeholder="Enter a Task" autocomplete="off" />
+            <button type="button" id="addbtn" aria-label="Add task">Add Task</button>
+
+        </div>
+        <ul id="tasklist" aria-live="polite"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
