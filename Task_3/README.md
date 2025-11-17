@@ -5,8 +5,6 @@
 ```
 book-api/
 │── src/
-│   ├── config/
-│   │   └── db.js
 │   ├── controllers/
 │   │   └── bookController.js
 │   ├── models/
