@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Demo — Task 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">MyBrand</div>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Make your site mobile friendly</h1>
+        <p>Use flexible layouts, media queries, and responsive images to adapt to small screens.</p>
+        <a class="btn" href="#">Get Started</a>
+      </div>
+      <figure class="hero-image">
+        <img src="https://via.placeholder.com/900x500.png?text=Hero+Image" alt="Hero">
+      </figure>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <h3>Flexible Layout</h3>
+        <p>Columns stack on smaller screens for better readability.</p>
+      </article>
+      <article class="feature">
+        <h3>Responsive Images</h3>
+        <p>Images scale inside their containers—no overflow.</p>
+      </article>
+      <article class="feature">
+        <h3>Accessible Nav</h3>
+        <p>Navigation collapses to a toggle button on small viewports.</p>
+      </article>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250.png?text=Card+1" alt="">
+        <h4>Card 1</h4>
+        <p>Information about card 1.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250.png?text=Card+2" alt="">
+        <h4>Card 2</h4>
+        <p>Information about card 2.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250.png?text=Card+3" alt="">
+        <h4>Card 3</h4>
+        <p>Information about card 3.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MyBrand — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Small JS for nav toggle and year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mainNav.classList.toggle('open');
+    });
+
+    // Close nav when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+      if (!mainNav.contains(e.target) && !navToggle.contains(e.target) && mainNav.classList.contains('open')) {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>
