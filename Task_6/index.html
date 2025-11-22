@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="page-wraapper">
+        <section class="card" aria-describedby="formTitle">
+            <h1 id="formtitle">Contact Us</h1>
+            <p class="subtitle">
+                Please fill out the form below. All fields are required.
+            </p>
+
+            <div id="successMessge" class="success-messsage" aria-live="polite"></div>
+
+            <form action="" id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your Name" aria-describedby="nameError">
+                    <small id="nameError" class="error-message" aria-live="polite"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Youremailid@gmail.com" id="email" aria-describedby="emailError">
+                    <small id="emaailError" class="error-message" aria-live="polite"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Type your message here..."
+                        aria-describedby="messageError"
+                    ></textarea>
+                    <small id="messageError" class="error-message" aria-live="polite"></small>
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-row">
+                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="reset" class="btn-secondary">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
